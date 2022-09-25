@@ -1,0 +1,17 @@
+[dependencies]
+sentry = "0.27.0"
+
+let _guard = sentry::init(("https://79d60f3d969f4b2390a1b31c7337e825@o229048.ingest.sentry.io/6774225", sentry::ClientOptions {
+    release: sentry::release_name!(),
+    ..Default::default()
+}));
+
+fn main() {
+    let _guard = sentry::init(("https://79d60f3d969f4b2390a1b31c7337e825@o229048.ingest.sentry.io/6774225", sentry::ClientOptions {
+        release: sentry::release_name!(),
+        ..Default::default()
+    }));
+
+    // Sentry will capture this
+    panic!("Everything is on fire!");
+}
